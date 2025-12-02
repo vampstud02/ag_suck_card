@@ -858,6 +858,7 @@ function checkTokenConfirmModal() {
                 if (tokenMatch) {
                     const tokenCount = parseInt(tokenMatch[1]);
                     window.__fullAutoState.tokenCount = tokenCount;
+                    console.log(`🪙 현재 보유 토큰: ${tokenCount}개`);
                     updateAutoStatus("2단계", "토큰 사용 확인 모달 발견!", tokenCount);
 
                     if (tokenCount <= 1) {
@@ -1090,6 +1091,7 @@ function checkForNextGameAuto() {
         if (remainingTokens !== null) {
             remainingTokens -= 1;
             window.__fullAutoState.tokenCount = remainingTokens;
+            console.log(`🪙 남은 토큰: ${remainingTokens}개 (다음 게임 시작)`);
             updateAutoStatus("게임 완료", "다음 게임 준비 중...", remainingTokens);
 
             if (remainingTokens <= 1) {
